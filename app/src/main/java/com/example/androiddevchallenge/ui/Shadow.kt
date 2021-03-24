@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.drawscope.withTransform
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
@@ -36,8 +37,8 @@ fun Modifier.drawColoredShadow(
     centerOffset: Offset = Offset(0f, 0f),
     rotationRadius: Float = 0f
 ) = this.drawBehind {
-    val transparentColor = android.graphics.Color.toArgb(color.copy(alpha = 0.0f).value.toLong())
-    val shadowColor = android.graphics.Color.toArgb(color.copy(alpha = alpha).value.toLong())
+    val transparentColor = color.copy(alpha = 0.0f).toArgb()
+    val shadowColor = color.copy(alpha = alpha).toArgb()
     this.drawIntoCanvas {
         val paint = Paint()
         val frameworkPaint = paint.asFrameworkPaint()

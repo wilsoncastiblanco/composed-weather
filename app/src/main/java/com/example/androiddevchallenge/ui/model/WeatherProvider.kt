@@ -148,7 +148,6 @@ private fun dayEightWeather(scale: PathScale) = Weather(
     wind = "25.3 km/h"
 )
 
-@Immutable
 data class ScheduledWeather(
     val screen: WeatherScreen,
     val weather: Weather,
