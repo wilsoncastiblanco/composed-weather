@@ -96,7 +96,8 @@ private fun City(viewState: WeatherViewModel.WeatherScreenState) {
         modifier = Modifier
             .padding(8.dp)
             .semantics {
-                contentDescription = "The City Selected ${viewState.selectedScreen.title} is ${viewState.citySelected}"
+                contentDescription =
+                    "The City Selected ${viewState.selectedScreen.title} is ${viewState.citySelected}"
             },
     )
 }
@@ -122,7 +123,7 @@ fun NextDaysWeather(nextDays: List<ScheduledWeather>) {
     val nextDaysWeather = remember { nextDays }
     LazyVerticalGrid(cells = GridCells.Fixed(2), modifier = Modifier.fillMaxSize()) {
         items(nextDaysWeather) { scheduledWeather ->
-            SmallCardWeather(scheduledWeather, Modifier.fillMaxSize())
+            SmallCardWeather(scheduledWeather = scheduledWeather, modifier = Modifier.fillMaxSize())
         }
     }
 }
