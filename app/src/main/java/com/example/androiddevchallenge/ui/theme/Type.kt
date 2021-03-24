@@ -126,4 +126,3 @@ fun typographyFromDefaults(
         overline = defaults.overline.merge(overline)
     )
 }
-
